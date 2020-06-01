@@ -5,7 +5,7 @@
 import sys
 
 def is_perfect_square(n):
-    ''' Use binary search to determine if n is a perfect valid square '''
+    # TODO: Use binary search to determine if n is a perfect valid square
     return False
 
 def main():
