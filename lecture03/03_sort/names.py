@@ -10,18 +10,18 @@ Person = collections.namedtuple('People', 'first last')
 
 # Functions
 
-def dump_people(people):
-    for person in people:
-        print('{} {}'.format(person.first, person.last))
-
-def sort_people(people):
+def main():
+    people = [Person(*line.split()) for line in sys.stdin]
+    
     #people = sorted(people, key=lambda p: p.first)
     #people = sorted(people, key=lambda p: p.last)
+
     people = sorted(people, key=lambda p: (p.last, p.first))
-    return people
+
+    for person in people:
+        print(f'{person.first} {person.last}')
 
 # Main execution
 
 if __name__ == '__main__':
-    people = [Person(*line.split()) for line in sys.stdin]
-    dump_people(sort_people(people))
+    main()
