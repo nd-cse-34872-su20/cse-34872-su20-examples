@@ -22,6 +22,25 @@ def is_perfect_square(n):
 
     return False
 
+def is_perfect_square_r(low, high, n):
+    ''' Binary search '''
+    if low > high:
+        return False
+
+    middle = (low + high) // 2
+    square = middle * middle
+        
+    if square == n:
+        return True
+
+    if square > n:
+        return is_perfect_square_r(low, middle - 1, n)
+    else:
+        return is_perfect_square_r(middle + 1, high, n)
+
+def is_perfect_square(n):
+    return is_perfect_square_r(1, n, n)
+
 '''
 # Linear search
 def is_perfect_square(n):
