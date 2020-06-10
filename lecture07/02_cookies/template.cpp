@@ -24,7 +24,7 @@ bool read_line(deque<int> &v) {
     	v.push_back(value);
     }
 
-    sort(v.rbegin(), v.rend());
+    // TODO: sort values in reverse order
     return true;
 }
 

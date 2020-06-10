@@ -10,8 +10,7 @@ def feed_children(children, cookies):
 def main():
     while ((children := sys.stdin.readline().split()) and
            (cookies  := sys.stdin.readline().split())):
-        children = sorted(map(int, children), reverse=True)
-        cookies  = sorted(map(int, cookies) , reverse=True)
+        # TODO: Sort children and cookies in reverse order
 
         print(feed_children(children, cookies))
 
