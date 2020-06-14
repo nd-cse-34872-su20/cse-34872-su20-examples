@@ -12,7 +12,7 @@ LOTTO_NUMBERS = 6
 def display_combinations(s, n=LOTTO_NUMBERS):
     # TODO Version 1: Use itertools to display combinations
 
-def combinations(s, d, k):
+def combinations(s, c, k):
     # TODO Version 2: Generate combinations recursively
 
     # TODO Base: have a complete subset

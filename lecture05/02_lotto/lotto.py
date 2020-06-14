@@ -14,18 +14,18 @@ def display_combinations(s, n=LOTTO_NUMBERS):
     for combination in sorted(itertools.combinations(s, n)):
         print(' '.join(map(str, combination)))
 
-def combinations(s, d, k):
+def combinations(s, c, k):
     # Base: have a complete subset
-    if len(d) == k:
+    if k == len(c):
         if len(s) == LOTTO_NUMBERS:
             print(' '.join(map(str, s)))
         return
 
     # Recurse: with current
-    combinations(s + [d[k]], d, k + 1)
+    combinations(s + [c[k]], c, k + 1)
 
     # Recurse: skip current
-    combinations(s, d, k + 1)
+    combinations(s, c, k + 1)
 
 def main():
     for line, numbers in enumerate(map(str.split, sys.stdin)):

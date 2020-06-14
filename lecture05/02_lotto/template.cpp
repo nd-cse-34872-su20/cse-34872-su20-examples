@@ -10,7 +10,7 @@ using namespace std;
 
 // Functions
 
-void combinations(vector<int> &s, vector<int> &d, size_t k) {
+void combinations(vector<int> &s, vector<int> &c, size_t k) {
     // TODO: Base: have complete subset
     
     // TODO: Recurse: with current

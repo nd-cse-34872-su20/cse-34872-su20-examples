@@ -10,9 +10,9 @@ using namespace std;
 
 // Functions
 
-void combinations(vector<int> &s, vector<int> &d, size_t k) {
+void combinations(vector<int> &s, vector<int> &c, size_t k) {
     // Base: have complete subset
-    if (k == d.size()) {
+    if (k == c.size()) {
     	if (s.size() == 6) {
 	    cout << s[0];
 	    for (size_t i = 1; i < s.size(); i++) {
@@ -22,14 +22,14 @@ void combinations(vector<int> &s, vector<int> &d, size_t k) {
 	}
     	return;
     }
-    
+
     // Recurse: with current
-    s.push_back(d[k]);
-    combinations(s, d, k + 1);
+    s.push_back(c[k]);
+    combinations(s, c, k + 1);
     s.pop_back(); // Reset subset
 
     // Recurse: skip current
-    combinations(s, d, k + 1);
+    combinations(s, c, k + 1);
 }
 
 int read_numbers(vector<int> &v) {
