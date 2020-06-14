@@ -8,8 +8,8 @@ using namespace std;
 
 // Functions
 
-void subsets(vector<int> &s, vector<int> &d, size_t k, size_t &count) {
-    if (k == d.size()) { // Base: have complete subset
+void subsets(vector<int> &s, vector<int> &c, size_t k, size_t &count) {
+    if (k == c.size()) { // Base: have complete subset
     	auto sum = accumulate(s.begin(), s.end(), 0);
     	count   += (sum % 3 == 0 ? 1 : 0);
 
@@ -18,10 +18,11 @@ void subsets(vector<int> &s, vector<int> &d, size_t k, size_t &count) {
     }
 
     // Recurse: skip current
-    subsets(s, d, k + 1, count);
+    subsets(s, c, k + 1, count);
+
     // Recurse: with current
-    s.push_back(d[k]);
-    subsets(s, d, k + 1, count);
+    s.push_back(c[k]);
+    subsets(s, c, k + 1, count);
     s.pop_back(); // Reset subset
 }
 
