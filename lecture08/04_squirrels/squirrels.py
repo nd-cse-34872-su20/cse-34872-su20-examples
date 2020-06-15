@@ -33,7 +33,26 @@ def hunt_squirrels(grid, n):
             )
 
     # 3. Use table result
-    return table[n][n]
+    return table
+
+def find_path(grid, n, table):
+    # Reconstruct the path by going from the end to the beginning.
+    path = []
+    r, c = n, n
+
+    while r > 0 and c > 0:
+        # Add current position to path
+        path.append(grid[r][c])
+
+        # Consider which path we took based on the values in the table
+        if table[r][c] - grid[r][c] == table[r][c - 1]:
+            c -= 1
+        else:
+            r -= 1
+    
+    # Reverse path since we want to go from start to end
+    path.reverse()
+    return path
 
 def main():
     while True:
@@ -42,8 +61,12 @@ def main():
         except ValueError:
             break
 
-        grid = read_grid(n)
-        print(hunt_squirrels(grid, n))
+        grid  = read_grid(n)
+        table = hunt_squirrels(grid, n)
+        print(table[n][n])
+
+        #path  = find_path(grid, n, table)
+        #print(path)
 
 # Main execution
 
