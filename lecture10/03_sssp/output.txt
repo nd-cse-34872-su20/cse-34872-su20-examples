@@ -1,0 +1,6 @@
+A -> B = A B
+A -> C = A C
+A -> D = A D
+A -> E = A C E
+A -> F = A C F
+A -> G = A C F G
