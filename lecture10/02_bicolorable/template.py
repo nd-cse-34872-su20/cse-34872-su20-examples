@@ -73,3 +73,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# vim: set sts=4 sw=4 ts=8 expandtab ft=python:
