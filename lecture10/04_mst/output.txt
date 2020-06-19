@@ -1,0 +1,7 @@
+24
+A B
+A C
+A D
+C E
+C F
+F G
